@@ -15,7 +15,7 @@ export const useLevelOrderArray = () => {
             setLevelOrderArray(resultArray.filter(num => !isNaN(num)));
         }
         else {
-            setLevelOrderArray(cleanedInput.trim().toLowerCase() === 'null' ? null : cleanedInput.trim());
+            setLevelOrderArray([cleanedInput.trim().toLowerCase() === 'null' ? null : cleanedInput.trim()].filter((val) => val !== ''));
         }
     };
 

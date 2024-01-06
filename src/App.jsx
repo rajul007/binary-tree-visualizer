@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import BinaryTreeInput from './components/BinaryTreeInput';
 import { useLevelOrderArray } from './utilities/levelOrderArrayUtils';
+import BinaryTreeVisualizer from './components/BinaryTreeVisualizer';
 
 function App() {
 	const [treeInput, setTreeInput] = useState("");
@@ -13,11 +14,12 @@ function App() {
 		generateLevelOrderArray(treeInput)
 	}, [treeInput]);
 
-	
+
 	return (
 		<>
 			<div className="container">
 				<BinaryTreeInput handleTreeInputChange={handleTreeInputChange} />
+				<BinaryTreeVisualizer levelOrderArray={levelOrderArray} />
 			</div>
 		</>
 	)
